@@ -1,0 +1,26 @@
+<!-- We pass the menu reference object into the app-header -->
+<app-header [menu]="menu"></app-header>
+
+<mat-drawer-container class="drawer-container">
+  <!-- #menu is a reference that we use -->
+  <mat-drawer #menu mode="side" class="app-sidenav">
+    <mat-list>
+      <mat-list-item>
+        <a routerLink="/">Home</a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <a routerLink="/profile">Profile</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
+
+<div class="main-action">
+  <button mat-fab color="primary" aria-label="Write something new!">
+    <mat-icon>create</mat-icon>
+  </button>
+</div>
